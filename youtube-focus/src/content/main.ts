@@ -1,8 +1,25 @@
-import { hideSidebar } from "./youtube";
-import { startObserver } from "./observer";
+import { loadSettings, setSettings } from "./settings";
+import { applyFocusMode } from "./focusMode";
+import { startNavigationListener } from "./observer";
 
-console.log("[YouTube Focus] Content script loaded");
+async function main() {
+    await loadSettings();
+    applyFocusMode();
 
-hideSidebar();
+    chrome.storage.onChanged.addListener((changes, area) => {
+        if (area !== "sync") {
+            return;
+        }
+        if (!changes.settings) {
+            return;
+        }
+        setSettings(changes.settings.newValue);
+        applyFocusMode();
 
-startObserver();
+        console.log("[YouTube Focus] Settings updated");
+    });
+
+    startNavigationListener();
+}
+
+main();

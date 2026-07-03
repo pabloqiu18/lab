@@ -1,14 +1,11 @@
-import { hideSidebar } from "./youtube";
+import { applyFocusMode } from "./focusMode";
 
-export function startObserver(): void {
-	const observer = new MutationObserver(() => {
-		hideSidebar();
-	});
-	
-	observer.observe(document.body, {
-		childList: true,
-		subtree: true,
-	});
-	
-	console.log("[YouTube Focus] Observer started");
+export function startNavigationListener(): void {
+    document.addEventListener("yt-navigate-finish", () => {
+        console.log("[YouTube Focus] Navigation detected");
+
+        applyFocusMode();
+    });
+
+    console.log("[YouTube Focus] Navigation listener started");
 }
