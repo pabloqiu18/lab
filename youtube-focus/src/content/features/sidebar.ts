@@ -1,19 +1,21 @@
-function getSidebar(): HTMLElement | null {
-    return document.querySelector<HTMLElement>("#secondary");
+import { setStyle, removeStyle } from "../styleManager";
+
+const SIDEBAR_STYLE = `
+#secondary {
+    display: none !important;
 }
+`;
 
 function resizePlayer(): void {
     window.dispatchEvent(new Event("resize"));
 }
 
 export function applySidebarVisibility(hidden: boolean): void {
-    const sidebar = getSidebar();
-
-    if (!sidebar) {
-        return;
+    if (hidden) {
+        setStyle("sidebar", SIDEBAR_STYLE);
+    } else {
+        removeStyle("sidebar");
     }
-
-    sidebar.style.display = hidden ? "none" : "";
 
     resizePlayer();
 }
