@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/github/license/pabloqiu18/lab)](https://mit-license.org/)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Version](https://img.shields.io/badge/Version-v1.0.0-blue)
+![Version](https://img.shields.io/badge/Version-v1.0.1-blue)
 
 ---
 
@@ -30,9 +30,8 @@
 
 ## Installation
 
-### Load the extension locally
 
-#### For Chrome
+### For Chrome
 
 1. Clone this repository.
 
@@ -68,7 +67,7 @@ chrome://extensions
 
 7. Click **Load unpacked** and select the `dist/chrome` folder.
 
-#### For Firefox
+### For Firefox
 
 Install the extension from Mozilla Add-ons (AMO).
 
