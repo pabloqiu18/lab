@@ -7,7 +7,7 @@ export interface FocusSettings {
 const DEFAULT_SETTINGS: FocusSettings = {
     hideSidebar: true,
     disableAutoplay: true,
-    hideEndScreen: false,
+    hideEndScreen: true,
 };
 
 const SETTINGS_KEY = "settings";
@@ -16,9 +16,10 @@ let currentSettings: FocusSettings = DEFAULT_SETTINGS;
 
 export async function loadSettings(): Promise<FocusSettings> {
     const result = await chrome.storage.sync.get(SETTINGS_KEY);
-    currentSettings = result[SETTINGS_KEY] ?? DEFAULT_SETTINGS;
+    const settings = (result[SETTINGS_KEY] as FocusSettings | undefined) ?? DEFAULT_SETTINGS;
+    currentSettings = settings;
 
-    return currentSettings;
+    return settings;
 }
 
 export async function saveSettings(settings: FocusSettings): Promise<void> {

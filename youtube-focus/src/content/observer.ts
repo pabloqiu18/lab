@@ -1,11 +1,7 @@
-import { applyFocusMode } from "./focusMode";
+import { updateFocusMode } from "./focusMode";
 
 export function startNavigationListener(): void {
     document.addEventListener("yt-navigate-finish", () => {
-        console.log("[YouTube Focus] Navigation detected");
-
-        applyFocusMode();
+        updateFocusMode();
     });
-
-    console.log("[YouTube Focus] Navigation listener started");
 }

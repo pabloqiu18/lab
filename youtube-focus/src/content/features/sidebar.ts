@@ -10,7 +10,7 @@ function resizePlayer(): void {
     window.dispatchEvent(new Event("resize"));
 }
 
-export function applySidebarVisibility(hidden: boolean): void {
+export function updateSidebarVisibility(hidden: boolean): void {
     if (hidden) {
         setStyle("sidebar", SIDEBAR_STYLE);
     } else {

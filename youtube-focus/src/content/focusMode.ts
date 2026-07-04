@@ -1,10 +1,12 @@
 import { getSettings } from "./settings";
-import { applySidebarVisibility } from "./features/sidebar";
-import { applyAutoplay } from "./features/autoplay";
+import { updateSidebarVisibility } from "./features/sidebar";
+import { updateAutoplayVisibility } from "./features/autoplay";
+import { updateEndScreenVisibility } from "./features/endscreen";
 
-export function applyFocusMode(): void {
+export function updateFocusMode(): void {
     const settings = getSettings();
 
-    applySidebarVisibility(settings.hideSidebar);
-    applyAutoplay(settings.disableAutoplay);
+    updateSidebarVisibility(settings.hideSidebar);
+    updateAutoplayVisibility(settings.disableAutoplay);
+    updateEndScreenVisibility(settings.hideEndScreen);
 }

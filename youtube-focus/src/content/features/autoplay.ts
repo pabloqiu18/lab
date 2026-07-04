@@ -20,7 +20,7 @@ function isAutoplayEnabled(): boolean {
     );
 }
 
-export function applyAutoplay(disable: boolean): void {
+export function updateAutoplayVisibility(disable: boolean): void {
     if (disable) {
         setStyle("autoplay", AUTOPLAY_STYLE);
     } else {

@@ -37,14 +37,10 @@ function bindCheckbox(
     settings: FocusSettings
 ) {
     const checkbox = document.getElementById(id) as HTMLInputElement;
-
     checkbox.checked = settings[id];
-
     checkbox.addEventListener("change", async () => {
         settings[id] = checkbox.checked;
 
         await saveSettings(settings);
-
-        console.log("[YouTube Focus] Saved settings:", settings);
     });
 }
