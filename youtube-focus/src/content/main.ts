@@ -7,7 +7,7 @@ async function main() {
     updateFocusMode();
 
     chrome.storage.onChanged.addListener((changes, area) => {
-        if (area !== "sync") {
+        if (area !== "local") {
             return;
         }
         if (!changes.settings) {

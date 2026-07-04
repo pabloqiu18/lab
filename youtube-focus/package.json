@@ -1,16 +1,19 @@
 {
   "name": "youtube-focus",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "npm run build:chrome",
+    "build:chrome": "tsc && vite build --mode chrome",
+    "build:firefox": "tsc && vite build --mode firefox"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.4.0",
     "@types/chrome": "^0.1.37",
     "@types/node": "^25.5.0",
+    "cross-env": "^10.1.0",
     "typescript": "~5.9.3",
     "vite": "^8.0.0",
     "vite-plugin-zip-pack": "^1.2.4"

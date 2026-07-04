@@ -15,7 +15,7 @@ const SETTINGS_KEY = "settings";
 let currentSettings: FocusSettings = DEFAULT_SETTINGS;
 
 export async function loadSettings(): Promise<FocusSettings> {
-    const result = await chrome.storage.sync.get(SETTINGS_KEY);
+    const result = await chrome.storage.local.get(SETTINGS_KEY);
     const settings = (result[SETTINGS_KEY] as FocusSettings | undefined) ?? DEFAULT_SETTINGS;
     currentSettings = settings;
 
@@ -25,7 +25,7 @@ export async function loadSettings(): Promise<FocusSettings> {
 export async function saveSettings(settings: FocusSettings): Promise<void> {
     currentSettings = settings;
     
-    await chrome.storage.sync.set({
+    await chrome.storage.local.set({
         [SETTINGS_KEY]: settings,
     });
 }
