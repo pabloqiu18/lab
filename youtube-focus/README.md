@@ -1,6 +1,6 @@
 # youtube-focus
 
-> Browser extension that removes distractions from YouTube at the request of my father.
+> Browser extension that removes distractions from YouTube that my father asked for.
 
 [![License](https://img.shields.io/github/license/pabloqiu18/lab)](https://mit-license.org/)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
@@ -70,6 +70,9 @@ chrome://extensions
 ### For Firefox
 
 Install the extension from Mozilla Add-ons (AMO).
+```text
+https://addons.mozilla.org/en-US/firefox/addon/youtube-focus-pabloq/
+```
 
 ---
 
